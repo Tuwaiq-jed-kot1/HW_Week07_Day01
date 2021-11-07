@@ -16,7 +16,7 @@
 
 @file:JvmName("WorkerUtils")
 
-package com.example.background.workers
+package background.workers
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

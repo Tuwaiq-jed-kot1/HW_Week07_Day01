@@ -1,12 +1,16 @@
-package com.example.background.workers
+package com.example.background
 
 import android.content.Context
 import android.util.Log
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import com.example.background.OUTPUT_PATH
+import background.workers.makeStatusNotification
+import background.workers.sleep
 import java.io.File
 
+/**
+ * Cleans up temporary files generated during blurring process
+ */
 private const val TAG = "CleanupWorker"
 class CleanupWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params) {
 
@@ -36,5 +40,4 @@ class CleanupWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, params
             Result.failure()
         }
     }
-
 }
