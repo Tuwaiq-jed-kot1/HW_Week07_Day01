@@ -44,3 +44,6 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+ext{
+    versions.work = "2.5.0"
+}
