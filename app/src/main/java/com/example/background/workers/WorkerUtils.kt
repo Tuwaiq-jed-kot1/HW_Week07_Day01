@@ -71,18 +71,18 @@ fun makeStatusNotification(message: String, context: Context) {
 
         // Add the channel
         val notificationManager =
-                context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
 
         notificationManager?.createNotificationChannel(channel)
     }
 
     // Create the notification
     val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentTitle(NOTIFICATION_TITLE)
-            .setContentText(message)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setVibrate(LongArray(0))
+        .setSmallIcon(R.drawable.ic_launcher_foreground)
+        .setContentTitle(NOTIFICATION_TITLE)
+        .setContentText(message)
+        .setPriority(NotificationCompat.PRIORITY_HIGH)
+        .setVibrate(LongArray(0))
 
     // Show the notification
     NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, builder.build())
@@ -113,7 +113,7 @@ fun blurBitmap(bitmap: Bitmap, applicationContext: Context): Bitmap {
 
         // Create the output bitmap
         val output = Bitmap.createBitmap(
-                bitmap.width, bitmap.height, bitmap.config)
+            bitmap.width, bitmap.height, bitmap.config)
 
         // Blur the image
         rsContext = RenderScript.create(applicationContext, RenderScript.ContextType.DEBUG)
